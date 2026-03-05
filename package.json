@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "Okada Online backend — Vercel Serverless (free tier)",
   "main": "api/index.js",
-  "engines": { "node": "18.x" },
+  "engines": { "node": "24" },
   "dependencies": {
     "firebase-admin": "^12.0.0",
     "twilio": "^4.19.0",
