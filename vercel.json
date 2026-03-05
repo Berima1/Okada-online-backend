@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/index" }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron/reset-daily",
+      "schedule": "0 0 * * *"
+    }
+  ]
+}
