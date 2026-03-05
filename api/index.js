@@ -435,6 +435,31 @@ module.exports = async (req, res) => {
       }});
     }
 
+    // GET /  — home page
+if (method === 'GET' && path === '/') {
+  return res.status(200).json({
+    name:    "Okada Online API",
+    version: "2.0",
+    status:  "🟢 Live",
+    docs:    "https://github.com/Berima1/Okada-online-backend",
+    endpoints: [
+      "POST /api/auth/send-otp",
+      "POST /api/auth/verify-otp",
+      "POST /api/rides/request",
+      "POST /api/rides/:id/accept",
+      "POST /api/rides/:id/complete",
+      "GET  /api/rides/history/:userId",
+      "PUT  /api/drivers/:id/location",
+      "PUT  /api/drivers/:id/status",
+      "GET  /api/owners/:id/dashboard",
+      "POST /api/payments/initialize",
+      "POST /api/ussd/callback",
+      "GET  /api/admin/stats",
+      "GET  /api/health",
+    ]
+  });
+    }
+    
     // GET /health  — useful for uptime checks
     if (method==='GET' && path==='/health') {
       return ok(res, { status:'ok', version:'2.0', platform:'Vercel', timestamp: new Date().toISOString() });
